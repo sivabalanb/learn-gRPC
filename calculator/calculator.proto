@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.calculator";
+option java_outer_classname = "CalculatorProto";
+option objc_class_prefix = "HLW";
+
+package calculator;
+
+service Calculator {
+  rpc Square (RpcInput) returns (RpcOutput);
+  rpc Add (RpcInput) returns (RpcOutput);
+  rpc Subtract (RpcInput) returns (RpcOutput);
+  rpc Multiply (RpcInput) returns (RpcOutput);
+}
+
+message RpcInput {
+  int32 number = 1;
+}
+
+message RpcOutput {
+  int32 result = 1;
+}
